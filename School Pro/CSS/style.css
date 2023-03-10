@@ -452,6 +452,8 @@ p-2{
   color: chocolate;
 }
 .topbar{
-  background-color:blue;
+  size:150%;
+  background-color:dodgerblue;
   font-size: 110%;
+  color:#fff
 }
