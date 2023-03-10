@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="CSS/register.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Join Us</title>
+     <link rel="icon" href="CSS/logo.jpg" type="image/jpg">
+     <script>
+      function validateForm() {
+        let a = document.forms ["form"]["name"].value;
+        if(a == ""){
+            alert("Please provide your name");
+            return false;
+        }
+        let b = document.forms ["form"]["IC"].value;
+        if(b == ""){
+            alert("Please provide your IC");
+            return false;
+        }
+        let c = document.forms ["form"]["email"].value;
+        if(c == ""){
+            alert("Please provide your email");
+            return false;
+        }
+        let d = document.forms ["form"]["phone"].value;
+        if(d == ""){
+            alert("Please provide your phone");
+            return false;
+        }
+        let e = document.forms ["form"]["parents"].value;
+        if(e == ""){
+            alert("Please provide your parents name");
+            return false;
+        }
+        let f = document.forms ["form"]["parent number"].value;
+        if(f == ""){
+            alert("Please provide your parent phone number");
+            return false;
+        }
+        if ((form.gender[0].checked ==false)&&(form.gender[1].checked==false))
+        {
+            alert("Please choose Gender:Male or Female");
+            return false;
+        }
+        var letters=/^[A-Za-z]/;
+        if(!a.match(letters))
+        {
+            alert("Your name must be alphabet")
+            return false;
+        }
+        var letters=/^[0-9]/;
+        if(!b.match(letters))
+        {
+            alert("Your IC must be number")
+            return false;
+        }
+        var letters=/^[0-9]/;
+        if(!d.match(letters))
+        {
+            alert("Your Phone number must be number")
+            return false;
+        }
+        var letters=/^[A-Za-z]/;
+        if(!e.match(letters))
+        {
+            alert("Your parents name must be alphabet")
+            return false;
+        }
+        var letters=/^[0-9]/;
+        if(!f.match(letters))
+        {
+            alert("Your parents phone number must be number")
+            return false;
+        }
+        alert("Thank for you register.Welcome you join the Hyakkaou College")
+      }
+     </script>
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Hyakkaou <span>College</span> <span2>Registration</span2></div>
+    <div class="content">
+      <form name="form" onsubmit="return validateForm()">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="name" placeholder="Enter your name">
+          </div>
+          <div class="input-box">
+            <span class="details">IC</span>
+            <input type="text" name="IC" placeholder="Enter your IC number">
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email">
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" name="phone" placeholder="Enter your number"  >
+          </div>
+          <div class="input-box">
+            <span class="details">Parents Name</span>
+            <input type="text" name="parents" placeholder="Enter your Parents Name">
+          </div>
+          <div class="input-box">
+            <span class="details">Parents Phone Number</span>
+            <input type="text" name="parent number" placeholder="Enter your parents phone number">
+          </div>
+        </div>
+        <div class="gender-details" required>
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          </div>
+        </div>
+        <div class="Course"  required>
+          <span class="details">Choose Your Course:</span>
+          <select>
+            <option value="0">-List of Couses-</option>
+            <option value="DIT" >Diploma in Information Technology</option>
+            <option value="DIA">Diploma in Accounting</option>
+            <option value="DHM">Diploma in Hotel Management</option>
+            <option value="DHC">Diploma in Health Care</option>
+            <option value="DIM">Diploma in Marketing</option>  	
+            <option value="DEM">Diploma in Events Management</option>  	
+            <option value="DAS">Diploma in Airline Service</option>
+            <option value="DTM">Diploma in Tourism Management</option> 
+            <option value="DIB">Diploma in International Business</option>   	  	
+            </select>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+        <a class="Home" href="f1.html">Go back Home<i class="bi-house"></i></a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
