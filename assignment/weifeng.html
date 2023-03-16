@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<style>
+table,th,td {
+  border : 3px solid black;
+  border-collapse: collapse;
+}
+td {
+  padding: 5px;
+  color: red;
+}
+th {
+  color: blue;
+}
+
+</style>
+<body align=center style="background-color: aqua;">
+<h1 style="font-family: Impact;color: purple;">Welcome to my website</h1>
+<p1 style="color: mediumaquamarine;">Click the button to get the CD collection<p1><br>
+<img src="https://cdn.dribbble.com/users/2322685/screenshots/6221645/welcome-dribbble.gif" width 100 height="50" >
+<button type="button" onclick="loadXMLDoc()">CD collection</button>
+<img src="https://cdn.dribbble.com/users/2322685/screenshots/6221645/welcome-dribbble.gif" width 100 height="50">
+<br><br>
+<table id="demo" align=center style="width: 80%;height: 100%;"></table>
+<a style="color: chocolate;font-family:Arial;" href="#top">Go to the top page</a>
+<br><br><hr>
+<a href="html.txt" target="_blank" style="color: orangered;">HTML CODE</a>
+<a href="xml.txt" target="_blank" style="color: darkgoldenrod;">XML CODE</a>
+<script>
+function loadXMLDoc() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "yumeko.xml", true);
+  xmlhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table ="<tr><th>Country</th><th>Year</th><th>Title</th></th><th>Artist</th><th>Company</th><th>Price(RM)</th></tr>";
+  var x = xmlDoc.getElementsByTagName("CD");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>
