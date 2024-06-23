@@ -1,117 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script>
-            function validateForm() {
-                let x = document.forms ["MyFirstForm"]["username"].value;
-                if (x == "") {
-                alert("Please provide your Name!");
-                return false;
-                }
-                var letters= /^[A-Za-z]/;
-                if (!x.match(letters))
-                {
-                    alert("Please input alphabet characters.");
-                    return false;
-                }
-                var group=document.MyFirstForm.question;
-        for (var i=0; i<group.length; i++)
-        {
-            if (group[i].checked)
-            break;
-        }
-            if (i==group.length)
-        {
-            alert("No Checkbox is checked");
-            return false;
-        }
-            }
-        </script>
-        <link rel="stylesheet" href="Tayweifeng.css">
-        <title>Quiz 3</title>
-    </head>
-    <body style="background-color: palevioletred;">
-        <center>
-            <table class="frist"><form name="MyFirstForm" onsubmit="return validateForm()">
-                <caption>DCS3003 Website Design Course Survey</caption>
-        <tr align="left">
-            <td><u style="color: blue;">Personal details</u></td>
-        </tr>
-        <tr>
-            <td class="title">Student ID :</td>
-            <td><input type="text" name="ID"></td>
-            <td class="title">Student Name :</td>
-            <td><input type="text" name="username"></td>
-        </tr>
-        <tr>
-            <td class="title">Course :</td>
-            <td><input type="text" name='course'></td>
-            <td class="title">IC No. :</td>
-            <td><input type="text" name='IC'></td>
-        </tr>
-        <tr>
-            <td class="title">Email address :</td>
-            <td><input type="email" name="email"></td>
-            <td class="title">D.O.B :</td>
-            <td><input type="date" name=dob></td>
-        </tr>
-        </center>
-    </form>
-    </table>
-    <br>
-    <center>
-    <table class="second"><form name="MyFirstForm" onsubmit="return validateForm()">
-        <tr align="left">
-        <td><u style="color: blue;">Question</u></td>
-        </tr>
-        <tr align="left">
-        <td style="color: brown;">Please answer all questions</td>
-        </tr>
-        <tr>
-        <td>1) Have you grasped the content of the website Design so far?</td>
-        <td><input type="radio" name=question value="Yes">Yes</td>
-        </tr>
-        <tr>
-        <td></td>
-        <td><input type="radio" name=question value="No">No</td>
-        </tr>
-        <tr>
-        <td>2) Can you now create a simple but interactive website?</td>
-        <td><input type="radio" name=question value="Yes">Yes</td>
-        </tr>
-        <tr>
-        <td></td>
-        <td><input type="radio" name=question value="No">No</td>
-        </tr>
-        <tr>
-        <td>3) What have you learned so far?</td>
-        <td><input type="checkbox" name=question >knowledge</td>
-        <td></td>
-        </tr>
-        <tr>
-        <td></td>
-        <td><input type="checkbox" name=question >Practical Skills</td>
-        </tr>
-        <tr>
-        <td></td>
-        <td><input type="checkbox" name=question >Problem Solving</td>
-        </tr>
-        <tr>
-        <td></td>
-        <td><input type="checkbox" name=question >Self-Exploration skills</td>
-        </tr>
-        <tr>
-        <td>4) Wish items/suggestions*</td>
-        </tr>
-        <tr>
-        <td>
-        <textarea name="suggestions">
-        </textarea>
-        </tr>
-    </table>
-    <br>
-    <input type="reset" value=Reset>
-    <input type="submit" value=Submit>
-</center>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Computer Graphics</title>
+    <script src="libraries/p5.min.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.min.js" type="text/javascript"></script>
+    
+    <script src="Tayweifeng.js" type="text/javascript"></script>
+
+    <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
+  </head>
+  <body>
+  </body>
 </html>
